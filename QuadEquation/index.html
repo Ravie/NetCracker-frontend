@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>Вычисление корней квадратного уравнения</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+		<script type="text/javascript" src="script.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<div id="input">
+			<b>Квадратное уравнение:</b>
+			<input type="number" id="coef_a" placeholder="A" required> x<sup>2</sup> +
+			<input type="number" id="coef_b" placeholder="B" required> x +
+			<input type="number" id="coef_c" placeholder="C" required> = 0
+			<button id="find_roots">Найти корни</button>
+			<br><br><div id="result">Ожидание ввода...</div>
+		</div>
+
+		<table id="table">
+			<tbody id="history">
+				<tr><th>Уравнение</th><th>Дискриминант</th><th>Корень 1</th><th>Корень 2</th></tr>
+			</tbody>
+		</table>
+	</body>
+</html>
