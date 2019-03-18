@@ -3,19 +3,35 @@ function findRoots() {
     let b = parseFloat(document.getElementById("coef_b").value);
     let c = parseFloat(document.getElementById("coef_c").value);
     if (isNaN(a)) {
-        alert("Ошибка при вводе коэффициента A. Измените его и попробуйте снова.");
+        swal({
+            title: "Ошибка ввода!",
+            text: "Ошибка при вводе коэффициента A",
+            icon: "warning",
+        });
         return;
     }
     if (a === 0) {
-        alert("Коэффициент при первом слагаемом уравнения не может быть равным нулю. Измените его и попробуйте снова.");
+        swal({
+            title: "Неверное значение!",
+            text: "Коэффициент при первом слагаемом уравнения не может быть равным нулю",
+            icon: "warning",
+        });
         return;
     }
     if (isNaN(b)) {
-        alert("Ошибка при вводе коэффициента B. Измените его и попробуйте снова.");
+        swal({
+            title: "Ошибка ввода!",
+            text: "Ошибка при вводе коэффициента B",
+            icon: "warning",
+        });
         return;
     }
     if (isNaN(c)) {
-        alert("Ошибка при вводе коэффициента C. Измените его и попробуйте снова.");
+        swal({
+            title: "Ошибка ввода!",
+            text: "Ошибка при вводе коэффициента C",
+            icon: "warning",
+        });
         return;
     }
     let tbody = document.getElementById("history");
