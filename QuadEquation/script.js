@@ -36,16 +36,16 @@ function findRoots() {
     }
     let tbody = document.getElementById("history");
     let row = document.createElement("TR");
-    let td1 = document.createElement("TD");
-    let td2 = document.createElement("TD");
-    let td3 = document.createElement("TD");
-    let td4 = document.createElement("TD");
+    let tdArr = [];
+    for (let i = 0; i < 4; i++) {
+        tdArr[i] = document.createElement("TD");
+    }
 
     let equation = a.toString() + "x<sup>2</sup>" + ((b >= 0.0) ? "+" : "") + b.toString() + "x" + ((c >= 0.0) ? "+" : "") + c.toString() + "=0";
-    td1.innerHTML = equation;
+    tdArr[0].innerHTML = equation;
 
     let discriminant = Math.pow(b, 2) - (4 * a * c);
-    td2.appendChild(document.createTextNode(discriminant));
+    tdArr[1].appendChild(document.createTextNode(discriminant));
 
     let text;
     if (discriminant < 0.0)
@@ -53,18 +53,17 @@ function findRoots() {
     else if (discriminant === 0.0) {
         let root = (-b / (2 * a)).toString();
         text = "Уравнение " + equation + " имеет один корень: " + root;
-        td3.appendChild(document.createTextNode(root));
+        tdArr[3].appendChild(document.createTextNode(root));
     } else {
         let root1 = ((-b + Math.sqrt(discriminant)) / (2 * a)).toString();
         let root2 = ((-b - Math.sqrt(discriminant)) / (2 * a)).toString();
         text = "Уравнение " + equation + " имеет два корня: " + root1 + " и " + root2;
-        td3.appendChild(document.createTextNode(root1));
-        td4.appendChild(document.createTextNode(root2));
+        tdArr[2].appendChild(document.createTextNode(root1));
+        tdArr[3].appendChild(document.createTextNode(root2));
     }
-    row.appendChild(td1);
-    row.appendChild(td2);
-    row.appendChild(td3);
-    row.appendChild(td4);
+    for (let i = 0; i < 4; i++) {
+        row.appendChild(tdArr[i]);
+    }
     tbody.appendChild(row);
     document.getElementById("result").innerHTML = text;
 }
