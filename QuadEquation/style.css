@@ -28,7 +28,7 @@ body {
     margin: auto;
     font-family: Consolas,monaco,monospace;
 }
-table {
+.table {
     position: absolute;
     border-collapse: collapse;
     line-height: 1.1;
@@ -37,11 +37,11 @@ table {
     width: 90%;
     color: #0C213B;
 }
-th {
+.table th {
     padding: 10px;
     border: 1px solid #A9E2CC;
 }
-td {
+.table td {
     font-size: 0.8em;
     padding: 5px 7px;
     border: 1px solid #A9E2CC;
