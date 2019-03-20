@@ -53,7 +53,7 @@ function findRoots() {
     else if (discriminant === 0.0) {
         let root = (-b / (2 * a)).toString();
         text = "Уравнение " + equation + " имеет один корень: " + root;
-        tdArr[3].appendChild(document.createTextNode(root));
+        tdArr[2].appendChild(document.createTextNode(root));
     } else {
         let root1 = ((-b + Math.sqrt(discriminant)) / (2 * a)).toString();
         let root2 = ((-b - Math.sqrt(discriminant)) / (2 * a)).toString();
