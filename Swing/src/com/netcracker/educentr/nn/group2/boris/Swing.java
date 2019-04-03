@@ -57,12 +57,15 @@ public class Swing extends JFrame {
     private class BtnEditClick implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            if (table.getSelectedRow() != -1 && (((BookModel)table.getModel()).getColumnName(table.getSelectedColumn()).equals("Author Name") ||
+            if (table.getSelectedRow() != -1 &&
+                            (((BookModel)table.getModel()).getColumnName(table.getSelectedColumn()).equals("Author Name") ||
                             ((BookModel)table.getModel()).getColumnName(table.getSelectedColumn()).equals("Author Email") ||
                             ((BookModel)table.getModel()).getColumnName(table.getSelectedColumn()).equals("Author Gender"))) {
                 SwingUtilities.invokeLater(() -> new AuthorEditor(table, table.getSelectedRow()));
             }
-            else if(table.getSelectedRow() > -1 && table.getSelectedRowCount() == 1) {
+            else if(table.getSelectedRow() > -1 && table.getSelectedRowCount() == 1 &&
+                            (((BookModel)table.getModel()).getColumnName(table.getSelectedColumn()).equals("Price") ||
+                            ((BookModel)table.getModel()).getColumnName(table.getSelectedColumn()).equals("Count"))) {
                 SwingUtilities.invokeLater(() -> new BookEditor(table));
             }
         }
