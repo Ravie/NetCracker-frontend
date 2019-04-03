@@ -19,18 +19,6 @@ public class Swing extends JFrame {
         add(jScrollPane);
         JPanel grid = new JPanel(new GridLayout(1, 2, 5, 0) );
 
-        table.addMouseListener(new MouseAdapter() {
-            public void mousePressed(MouseEvent mouseEvent) {
-                JTable table =(JTable) mouseEvent.getSource();
-                Point point = mouseEvent.getPoint();
-                int row = table.rowAtPoint(point);
-                int column = table.columnAtPoint(point);
-                if (mouseEvent.getClickCount() == 2 && table.getSelectedRow() != -1 && ((BookModel)table.getModel()).getColumnName(column).equals("Author")) {
-                    SwingUtilities.invokeLater(() -> new AuthorEditor(table, row));
-                }
-            }
-        });
-
         JButton btnAdd = new JButton("Add");
         btnAdd.addActionListener( new BtnAddClick());
         grid.add(btnAdd);
@@ -69,7 +57,9 @@ public class Swing extends JFrame {
     private class BtnEditClick implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            if (table.getSelectedRow() != -1 && ((BookModel)table.getModel()).getColumnName(table.getSelectedColumn()).equals("Author")) {
+            if (table.getSelectedRow() != -1 && (((BookModel)table.getModel()).getColumnName(table.getSelectedColumn()).equals("Author Name") ||
+                            ((BookModel)table.getModel()).getColumnName(table.getSelectedColumn()).equals("Author Email") ||
+                            ((BookModel)table.getModel()).getColumnName(table.getSelectedColumn()).equals("Author Gender"))) {
                 SwingUtilities.invokeLater(() -> new AuthorEditor(table, table.getSelectedRow()));
             }
             else if(table.getSelectedRow() > -1 && table.getSelectedRowCount() == 1) {

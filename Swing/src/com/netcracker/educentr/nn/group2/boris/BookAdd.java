@@ -33,11 +33,14 @@ public class BookAdd extends JFrame {
             curCol++;
         }
         setContentPane(mainBox);*/
-        JPanel jPanelBook = new JPanel(new GridLayout(((BookModel)table.getModel()).getColumnCount(), 2, 5, 12));
+        Container container = getContentPane();
+        container.setLayout (new BorderLayout ());
+
+        JPanel jPanelBook = new JPanel(new GridLayout(((BookModel)table.getModel()).getColumnCount() - ((BookModel)table.getModel()).getAuthorFieldCount(), 2, 5, 12));
         jPanelBook.setBorder(BorderFactory.createTitledBorder("Book"));
         JLabel[] columnName = new JLabel[((BookModel)table.getModel()).getColumnCount()];
         JTextField[] columnValue = new JTextField[((BookModel)table.getModel()).getColumnCount()];
-        for (int curCol=0; curCol < ((BookModel)table.getModel()).getColumnCount() - 1; curCol++) {
+        for (int curCol=0; curCol < ((BookModel)table.getModel()).getColumnCount() - ((BookModel)table.getModel()).getAuthorFieldCount(); curCol++) {
             columnName[curCol] = new JLabel(((BookModel)table.getModel()).getColumnName(curCol)+":");
             if(table.getSelectedRow() > -1)
                 columnValue[curCol] = new JTextField(((BookModel)table.getModel()).getValueAt(table.getSelectedRow(), curCol).toString());
@@ -46,7 +49,7 @@ public class BookAdd extends JFrame {
             jPanelBook.add(columnName[curCol]);
             jPanelBook.add(columnValue[curCol]);
         }
-        add(jPanelBook, BorderLayout.WEST);
+        container.add(jPanelBook, BorderLayout.NORTH);
 
         JPanel jPanelAuthor = new JPanel(new GridLayout(((BookModel)table.getModel()).getAuthorFieldCount(), 2, 5, 12));
         jPanelAuthor.setBorder(BorderFactory.createTitledBorder("Author"));
@@ -61,7 +64,7 @@ public class BookAdd extends JFrame {
             jPanelAuthor.add(authorColName[curCol]);
             jPanelAuthor.add(authorColValue[curCol]);
         }
-        add(jPanelAuthor, BorderLayout.EAST);
+        container.add(jPanelAuthor, BorderLayout.CENTER);
 
         JPanel grid = new JPanel(new GridLayout(1, 2, 5, 0) );
         JButton btnOk = new JButton("OK");
@@ -69,7 +72,7 @@ public class BookAdd extends JFrame {
         grid.add(btnOk);
         JPanel flow = new JPanel(new FlowLayout(FlowLayout.RIGHT ));
         flow.add(grid);
-        add(flow, BorderLayout.SOUTH );
+        container.add(flow, BorderLayout.SOUTH );
 
         pack();
         setVisible(true);

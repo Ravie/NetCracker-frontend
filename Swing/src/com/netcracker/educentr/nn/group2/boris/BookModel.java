@@ -47,7 +47,7 @@ public class BookModel extends AbstractTableModel {
 
     @Override
     public int getColumnCount() {
-        return 5;
+        return 7;
     }
 
     @Override
@@ -63,7 +63,11 @@ public class BookModel extends AbstractTableModel {
             case 3:
                 return cur.getQty();
             case 4:
-                return cur.getAuthor();
+                return cur.getAuthor().getName();
+            case 5:
+                return cur.getAuthor().getEmail();
+            case 6:
+                return cur.getAuthor().getGender();
         }
         return null;
     }
@@ -79,7 +83,11 @@ public class BookModel extends AbstractTableModel {
             case 3:
                 return "Count";
             case 4:
-                return "Author";
+                return "Author Name";
+            case 5:
+                return "Author Email";
+            case 6:
+                return "Author Gender";
         }
         return "";
     }
