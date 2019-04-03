@@ -13,13 +13,16 @@ public class BookModel extends AbstractTableModel {
     private List<Book> books = new ArrayList<>();
 
     public BookModel() {
-        books.add(new Book(1231412233479L,"123",100,10.5,new Author("456","789","m")));
+        books.add(new Book(1231412233479L,"John Carter of Mars",100,10.5,new Author("Edgar Rice Burroughs","Burroughs@gmail.com","m")));
     }
 
     public void addBook(Book b){
-        if(!books.contains(b))
-            books.add(b);
+        books.add(b);
         fireTableDataChanged();
+    }
+
+    public boolean isBookInLibrary(Book b){
+        return books.contains(b);
     }
 
     public void editBook(int rowIndex, double price, int qty){

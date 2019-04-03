@@ -53,17 +53,22 @@ public class BookEditor extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
-                if (Double.parseDouble(vPrice.getText()) < 0)
+                boolean isError = false;
+                if (Double.parseDouble(vPrice.getText()) < 0) {
                     JOptionPane.showMessageDialog(BookEditor.this,
                             new String[]{"Отрицательное значение:", "Price = " + Double.parseDouble(vPrice.getText())},
                             TITLE_INPUT_ERROR,
                             JOptionPane.ERROR_MESSAGE);
-                if (Integer.parseInt(vQty.getText()) < 0)
+                    isError = true;
+                }
+                if (Integer.parseInt(vQty.getText()) < 0) {
                     JOptionPane.showMessageDialog(BookEditor.this,
                             new String[]{"Отрицательное значение:", "Count = " + Integer.parseInt(vQty.getText())},
                             TITLE_INPUT_ERROR,
                             JOptionPane.ERROR_MESSAGE);
-                else {
+                    isError = true;
+                }
+                if(!isError) {
                     ((BookModel) table.getModel()).editBook(table.getSelectedRow(), Double.parseDouble(vPrice.getText()), Integer.parseInt(vQty.getText()));
                     dispose();
                 }

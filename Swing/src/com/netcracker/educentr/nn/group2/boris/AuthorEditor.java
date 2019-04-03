@@ -43,25 +43,28 @@ public class AuthorEditor extends JFrame {
     private class OkayClick implements ActionListener {
         private JTable table;
 
-        OkayClick(JTable table)
-        {
+        OkayClick(JTable table) {
             this.table = table;
         }
 
         @Override
         public void actionPerformed(ActionEvent e) {
-        if(!(columnValue[1].getText().contains("@")) && !(columnValue[1].getText().contains("."))){
-            JOptionPane.showMessageDialog(AuthorEditor.this,
-                    new String[]{"Данный Email недопустим"},
-                    TITLE_INPUT_ERROR,
-                    JOptionPane.ERROR_MESSAGE);
-        }
-        if(!(columnValue[2].getText().equals("male")) && !(columnValue[2].getText().equals("female")) && !(columnValue[2].getText().equals("f")) && !(columnValue[2].getText().equals("m"))){
-            JOptionPane.showMessageDialog(AuthorEditor.this,
-                    new String[]{"Введите верный пол: male/female (m/f)"},
-                    TITLE_INPUT_ERROR,
-                    JOptionPane.ERROR_MESSAGE);
-        }else{
+            boolean isError = false;
+            if (!(columnValue[1].getText().contains("@")) && !(columnValue[1].getText().contains("."))) {
+                JOptionPane.showMessageDialog(AuthorEditor.this,
+                        new String[]{"Данный Email недопустим"},
+                        TITLE_INPUT_ERROR,
+                        JOptionPane.ERROR_MESSAGE);
+                isError = true;
+            }
+            if (!(columnValue[2].getText().equals("male")) && !(columnValue[2].getText().equals("female")) && !(columnValue[2].getText().equals("f")) && !(columnValue[2].getText().equals("m"))) {
+                JOptionPane.showMessageDialog(AuthorEditor.this,
+                        new String[]{"Введите верный пол: male/female (m/f)"},
+                        TITLE_INPUT_ERROR,
+                        JOptionPane.ERROR_MESSAGE);
+                isError = true;
+            }
+            if(!isError) {
                 if (table.getSelectedRow() > -1)
                     ((BookModel) table.getModel()).editAuthor(table.getSelectedRow(), new Author(columnValue[0].getText(), columnValue[1].getText(), columnValue[2].getText()));
                 dispose();

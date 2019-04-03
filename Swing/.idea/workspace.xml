@@ -5,7 +5,7 @@
       <change beforePath="$PROJECT_DIR$/src/com/netcracker/educentr/nn/group2/boris/AuthorEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/netcracker/educentr/nn/group2/boris/AuthorEditor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/netcracker/educentr/nn/group2/boris/BookAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/netcracker/educentr/nn/group2/boris/BookAdd.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/netcracker/educentr/nn/group2/boris/BookEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/netcracker/educentr/nn/group2/boris/BookEditor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/netcracker/educentr/nn/group2/boris/Swing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/netcracker/educentr/nn/group2/boris/Swing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/netcracker/educentr/nn/group2/boris/BookModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/netcracker/educentr/nn/group2/boris/BookModel.java" afterDir="false" />
     </list>
     <ignored path="untitled.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,8 +31,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/netcracker/educentr/nn/group2/boris/Swing.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="53" column="13" lean-forward="true" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
+            <state relative-caret-position="507">
+              <caret line="67" column="47" lean-forward="true" selection-start-line="67" selection-start-column="47" selection-end-line="67" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -43,7 +43,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/netcracker/educentr/nn/group2/boris/Book.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
+            <state relative-caret-position="289">
               <caret line="47" column="29" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
               <folding>
                 <element signature="e#568#569#0" expanded="true" />
@@ -86,15 +86,15 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/netcracker/educentr/nn/group2/boris/BookModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="69" column="51" lean-forward="true" selection-start-line="69" selection-start-column="51" selection-end-line="69" selection-end-column="51" />
+            <state relative-caret-position="305">
+              <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#364#365#0" expanded="true" />
-                <element signature="e#451#452#0" expanded="true" />
-                <element signature="e#1140#1141#0" expanded="true" />
-                <element signature="e#1213#1214#0" expanded="true" />
-                <element signature="e#2399#2400#0" expanded="true" />
+                <element signature="e#685#686#0" expanded="true" />
+                <element signature="e#725#726#0" expanded="true" />
+                <element signature="e#1239#1240#0" expanded="true" />
+                <element signature="e#1312#1313#0" expanded="true" />
+                <element signature="e#2498#2499#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -103,8 +103,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/netcracker/educentr/nn/group2/boris/BookEditor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="694">
-              <caret line="71" column="103" selection-start-line="71" selection-start-column="64" selection-end-line="71" selection-end-column="103" />
+            <state relative-caret-position="626">
+              <caret line="67" column="55" lean-forward="true" selection-start-line="67" selection-start-column="55" selection-end-line="67" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -115,8 +115,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/netcracker/educentr/nn/group2/boris/AuthorEditor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="541">
-              <caret line="55" column="38" lean-forward="true" selection-start-line="55" selection-start-column="38" selection-end-line="55" selection-end-column="38" />
+            <state relative-caret-position="677">
+              <caret line="62" column="42" lean-forward="true" selection-start-line="62" selection-start-column="42" selection-end-line="62" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1799#1800#0" expanded="true" />
@@ -129,8 +129,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/netcracker/educentr/nn/group2/boris/BookAdd.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="121" column="22" selection-start-line="121" selection-start-column="22" selection-end-line="121" selection-end-column="22" />
+            <state relative-caret-position="575">
+              <caret line="143" column="106" selection-start-line="143" selection-start-column="106" selection-end-line="143" selection-end-column="106" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -175,10 +175,10 @@
         <option value="$PROJECT_DIR$/src/com/netcracker/educentr/nn/group2/boris/Example.java" />
         <option value="$PROJECT_DIR$/src/com/netcracker/educentr/nn/group2/boris/Author.java" />
         <option value="$PROJECT_DIR$/src/com/netcracker/educentr/nn/group2/boris/Book.java" />
-        <option value="$PROJECT_DIR$/src/com/netcracker/educentr/nn/group2/boris/BookModel.java" />
         <option value="$PROJECT_DIR$/src/com/netcracker/educentr/nn/group2/boris/Swing.java" />
-        <option value="$PROJECT_DIR$/src/com/netcracker/educentr/nn/group2/boris/AuthorEditor.java" />
         <option value="$PROJECT_DIR$/src/com/netcracker/educentr/nn/group2/boris/BookEditor.java" />
+        <option value="$PROJECT_DIR$/src/com/netcracker/educentr/nn/group2/boris/AuthorEditor.java" />
+        <option value="$PROJECT_DIR$/src/com/netcracker/educentr/nn/group2/boris/BookModel.java" />
         <option value="$PROJECT_DIR$/src/com/netcracker/educentr/nn/group2/boris/BookAdd.java" />
       </list>
     </option>
@@ -351,12 +351,12 @@
       <workItem from="1481809180568" duration="3184000" />
       <workItem from="1491373238737" duration="55000" />
       <workItem from="1554191170528" duration="925000" />
-      <workItem from="1554197308861" duration="47793000" />
+      <workItem from="1554197308861" duration="49220000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66924000" />
+    <option name="totallyTimeSpent" value="68351000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1874" height="1096" extended-state="6" />
@@ -546,24 +546,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/netcracker/educentr/nn/group2/boris/BookModel.java">
+    <entry file="file://$PROJECT_DIR$/src/com/netcracker/educentr/nn/group2/boris/AuthorEditor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="69" column="51" lean-forward="true" selection-start-line="69" selection-start-column="51" selection-end-line="69" selection-end-column="51" />
+        <state relative-caret-position="677">
+          <caret line="62" column="42" lean-forward="true" selection-start-line="62" selection-start-column="42" selection-end-line="62" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#364#365#0" expanded="true" />
-            <element signature="e#451#452#0" expanded="true" />
-            <element signature="e#1140#1141#0" expanded="true" />
-            <element signature="e#1213#1214#0" expanded="true" />
-            <element signature="e#2399#2400#0" expanded="true" />
+            <element signature="e#1799#1800#0" expanded="true" />
+            <element signature="e#1841#1842#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/netcracker/educentr/nn/group2/boris/BookEditor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="626">
+          <caret line="67" column="55" lean-forward="true" selection-start-line="67" selection-start-column="55" selection-end-line="67" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/netcracker/educentr/nn/group2/boris/Swing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="67" column="47" lean-forward="true" selection-start-line="67" selection-start-column="47" selection-end-line="67" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/netcracker/educentr/nn/group2/boris/BookModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#685#686#0" expanded="true" />
+            <element signature="e#725#726#0" expanded="true" />
+            <element signature="e#1239#1240#0" expanded="true" />
+            <element signature="e#1312#1313#0" expanded="true" />
+            <element signature="e#2498#2499#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/netcracker/educentr/nn/group2/boris/Book.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
+        <state relative-caret-position="289">
           <caret line="47" column="29" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
           <folding>
             <element signature="e#568#569#0" expanded="true" />
@@ -586,42 +618,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/netcracker/educentr/nn/group2/boris/AuthorEditor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="55" column="38" lean-forward="true" selection-start-line="55" selection-start-column="38" selection-end-line="55" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1799#1800#0" expanded="true" />
-            <element signature="e#1841#1842#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/netcracker/educentr/nn/group2/boris/Swing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="53" column="13" lean-forward="true" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/netcracker/educentr/nn/group2/boris/BookEditor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="694">
-          <caret line="71" column="103" selection-start-line="71" selection-start-column="64" selection-end-line="71" selection-end-column="103" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/netcracker/educentr/nn/group2/boris/BookAdd.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="121" column="22" selection-start-line="121" selection-start-column="22" selection-end-line="121" selection-end-column="22" />
+        <state relative-caret-position="575">
+          <caret line="143" column="106" selection-start-line="143" selection-start-column="106" selection-end-line="143" selection-end-column="106" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
