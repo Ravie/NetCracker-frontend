@@ -6,6 +6,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class BookAdd extends JFrame {
+    private final String TITLE_INPUT_ERROR = "Ошибка ввода";
     public BookAdd(JTable table) {
         super("Add book to library");
         setSize(640, 360);
@@ -92,17 +93,49 @@ public class BookAdd extends JFrame {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            ((BookModel)table.getModel()).addBook(
-                    new Book(
+            try {
+                if (Long.parseLong(columnValue[0].getText()) < 0)
+                    JOptionPane.showMessageDialog(BookAdd.this,
+                            new String[]{"Отрицательное значение:", "ISBN = " + Integer.parseInt(columnValue[3].getText())},
+                            TITLE_INPUT_ERROR,
+                            JOptionPane.ERROR_MESSAGE);
+                if (Integer.parseInt(columnValue[3].getText()) < 0)
+                    JOptionPane.showMessageDialog(BookAdd.this,
+                            new String[]{"Отрицательное значение:", "Count = " + Integer.parseInt(columnValue[3].getText())},
+                            TITLE_INPUT_ERROR,
+                            JOptionPane.ERROR_MESSAGE);
+                if (Double.parseDouble(columnValue[2].getText()) < 0)
+                    JOptionPane.showMessageDialog(BookAdd.this,
+                            new String[]{"Отрицательное значение:", "Price = " + Double.parseDouble(columnValue[2].getText())},
+                            TITLE_INPUT_ERROR,
+                            JOptionPane.ERROR_MESSAGE);
+                if(!(authorColValue[1].getText().contains("@")) && !(authorColValue[1].getText().contains(".")))
+                    JOptionPane.showMessageDialog(BookAdd.this,
+                            new String[]{"Данный Email недопустим"},
+                            TITLE_INPUT_ERROR,
+                            JOptionPane.ERROR_MESSAGE);
+                if (!(authorColValue[2].getText().equals("male")) && !(authorColValue[2].getText().equals("female")) && !(authorColValue[2].getText().equals("f")) && !(authorColValue[2].getText().equals("m")))
+                    JOptionPane.showMessageDialog(BookAdd.this,
+                            new String[]{"Введите верный пол: male/female (m/f)"},
+                            TITLE_INPUT_ERROR,
+                            JOptionPane.ERROR_MESSAGE);
+                else {
+                    ((BookModel) table.getModel()).addBook(new Book(
                             Long.parseLong(columnValue[0].getText()),
                             columnValue[1].getText(),
                             Integer.parseInt(columnValue[3].getText()),
                             Double.parseDouble(columnValue[2].getText()),
                             new Author(authorColValue[0].getText(),
                                     authorColValue[1].getText(),
-                                    authorColValue[2].getText())
-                    ));
-            dispose();
+                                    authorColValue[2].getText())));
+                    dispose();
+                }
+            } catch (NumberFormatException nfe) {
+                JOptionPane.showMessageDialog(BookAdd.this,
+                        new String[]{"NumberFormatException:", "Проверьте правильность введенных данных"},
+                        TITLE_INPUT_ERROR,
+                        JOptionPane.ERROR_MESSAGE);
+            }
         }
     }
 }

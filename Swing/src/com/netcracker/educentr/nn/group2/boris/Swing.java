@@ -7,6 +7,7 @@ import java.awt.event.*;
 
 public class Swing extends JFrame {
     private JTable table;
+    private final String TITLE_confirm = "Окно подтверждения";
 
     public Swing() {
         super("Library");
@@ -40,9 +41,16 @@ public class Swing extends JFrame {
     private class BtnRemoveClick implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            for(int i : table.getSelectedRows())
-            {
-                ((BookModel)table.getModel()).removeBook(i);
+            int result = JOptionPane.showConfirmDialog(Swing.this,
+                            "Подтвердите удаление "+table.getSelectedRows().length+" строк(и)",
+                            TITLE_confirm,
+                            JOptionPane.YES_NO_OPTION,
+                            JOptionPane.WARNING_MESSAGE);
+            if (result == JOptionPane.YES_OPTION) {
+                for(int i : table.getSelectedRows())
+                {
+                    ((BookModel)table.getModel()).removeBook(i);
+                }
             }
         }
     }

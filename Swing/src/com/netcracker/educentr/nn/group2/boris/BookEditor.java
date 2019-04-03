@@ -6,6 +6,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class BookEditor extends JFrame {
+    private final String TITLE_INPUT_ERROR = "Ошибка ввода";
     public BookEditor(JTable table) {
         super("Book Editor");
         setSize(640, 360);
@@ -51,8 +52,27 @@ public class BookEditor extends JFrame {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            ((BookModel)table.getModel()).editBook(table.getSelectedRow(), Double.parseDouble(vPrice.getText()), Integer.parseInt(vQty.getText()));
-            dispose();
+            try {
+                if (Double.parseDouble(vPrice.getText()) < 0)
+                    JOptionPane.showMessageDialog(BookEditor.this,
+                            new String[]{"Отрицательное значение:", "Price = " + Double.parseDouble(vPrice.getText())},
+                            TITLE_INPUT_ERROR,
+                            JOptionPane.ERROR_MESSAGE);
+                if (Integer.parseInt(vQty.getText()) < 0)
+                    JOptionPane.showMessageDialog(BookEditor.this,
+                            new String[]{"Отрицательное значение:", "Count = " + Integer.parseInt(vQty.getText())},
+                            TITLE_INPUT_ERROR,
+                            JOptionPane.ERROR_MESSAGE);
+                else {
+                    ((BookModel) table.getModel()).editBook(table.getSelectedRow(), Double.parseDouble(vPrice.getText()), Integer.parseInt(vQty.getText()));
+                    dispose();
+                }
+            } catch (NumberFormatException nfe) {
+                JOptionPane.showMessageDialog(BookEditor.this,
+                        new String[]{"NumberFormatException:", "Проверьте правильность введенных данных"},
+                        TITLE_INPUT_ERROR,
+                        JOptionPane.ERROR_MESSAGE);
+            }
         }
     }
 }
