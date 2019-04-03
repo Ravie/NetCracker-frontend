@@ -47,9 +47,9 @@ public class Swing extends JFrame {
                             JOptionPane.YES_NO_OPTION,
                             JOptionPane.WARNING_MESSAGE);
             if (result == JOptionPane.YES_OPTION) {
-                for(int i : table.getSelectedRows())
-                {
-                    ((BookModel)table.getModel()).removeBook(i);
+                int[] selection = table.getSelectedRows();
+                for (int i = selection.length - 1; i >= 0; i--) {
+                    ((BookModel)table.getModel()).removeBook(selection[i]);
                 }
             }
         }
