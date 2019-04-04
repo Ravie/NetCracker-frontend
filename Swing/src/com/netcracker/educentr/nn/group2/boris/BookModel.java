@@ -12,24 +12,24 @@ public class BookModel extends AbstractTableModel {
     private List<Book> books = new ArrayList<>();
 
     public BookModel() {
-        books.add(new Book(1231412233479L,"John Carter of Mars",100,10.5,new Author("Edgar Rice Burroughs","Burroughs@gmail.com","m")));
+        books.add(new Book(1231412233479L, "John Carter of Mars", 100, 10.5, new Author("Edgar Rice Burroughs", "Burroughs@gmail.com", "m")));
     }
 
-    public void addBook(Book b){
+    public void addBook(Book b) {
         books.add(b);
         fireTableDataChanged();
     }
 
-    public boolean isBookInLibrary(Book b){
+    public boolean isBookInLibrary(Book b) {
         return books.contains(b);
     }
 
-    public void editBook(int rowIndex, Book b){
+    public void editBook(int rowIndex, Book b) {
         books.set(rowIndex, b);
         fireTableDataChanged();
     }
 
-    public void removeBook(int rowIndex){
+    public void removeBook(int rowIndex) {
         books.remove(rowIndex);
         fireTableDataChanged();
     }
@@ -46,8 +46,8 @@ public class BookModel extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        Book cur=books.get(rowIndex);
-        switch (columnIndex){
+        Book cur = books.get(rowIndex);
+        switch (columnIndex) {
             case 0:
                 return cur.getIsbn();
             case 1:
@@ -67,7 +67,7 @@ public class BookModel extends AbstractTableModel {
     }
 
     public String getColumnName(int column) {
-        switch (column){
+        switch (column) {
             case 0:
                 return "ISBN";
             case 1:
@@ -91,7 +91,7 @@ public class BookModel extends AbstractTableModel {
     }
 
     public String getAuthorColumnName(int column) {
-        switch (column){
+        switch (column) {
             case 0:
                 return "Name";
             case 1:
@@ -103,8 +103,8 @@ public class BookModel extends AbstractTableModel {
     }
 
     public Object getAuthor(int rowIndex, int columnIndex) {
-        Author cur=books.get(rowIndex).getAuthor();
-        switch (columnIndex){
+        Author cur = books.get(rowIndex).getAuthor();
+        switch (columnIndex) {
             case 0:
                 return cur.getName();
             case 1:
@@ -116,7 +116,7 @@ public class BookModel extends AbstractTableModel {
     }
 
     public Class<?> getColumnClass(int columnIndex) {
-        switch (columnIndex){
+        switch (columnIndex) {
             case 0:
                 return Long.class;
             case 1:
