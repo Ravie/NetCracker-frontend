@@ -58,7 +58,7 @@ public class Swing extends JFrame {
     private class BtnAddClick implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            SwingUtilities.invokeLater(() -> new BookAdd(table, true));
+            SwingUtilities.invokeLater(() -> new BookEditor(table, true));
         }
     }
 
@@ -66,7 +66,7 @@ public class Swing extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (table.getSelectedRow() > -1 && table.getSelectedRowCount() == 1) {
-                SwingUtilities.invokeLater(() -> new BookAdd(table, false));
+                SwingUtilities.invokeLater(() -> new BookEditor(table, false));
             }
         }
     }
