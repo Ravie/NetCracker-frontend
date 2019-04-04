@@ -1,7 +1,6 @@
 package com.netcracker.educentr.nn.group2.boris;
 
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -14,6 +13,7 @@ public class Swing extends JFrame {
         setSize(1280, 720);
         setLocation(150, 100);
         setDefaultCloseOperation( EXIT_ON_CLOSE );
+
         BookModel m=new BookModel();
         table=new JTable(m);
         JScrollPane jScrollPane=new JScrollPane(table);
@@ -58,23 +58,15 @@ public class Swing extends JFrame {
     private class BtnAddClick implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            SwingUtilities.invokeLater(() -> new BookAdd(table));
+            SwingUtilities.invokeLater(() -> new BookAdd(table, true));
         }
     }
 
     private class BtnEditClick implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            if (table.getSelectedRow() != -1 &&
-                            (((BookModel)table.getModel()).getColumnName(table.getSelectedColumn()).equals("Author Name") ||
-                            ((BookModel)table.getModel()).getColumnName(table.getSelectedColumn()).equals("Author Email") ||
-                            ((BookModel)table.getModel()).getColumnName(table.getSelectedColumn()).equals("Author Gender"))) {
-                SwingUtilities.invokeLater(() -> new AuthorEditor(table, table.getSelectedRow()));
-            }
-            else if(table.getSelectedRow() > -1 && table.getSelectedRowCount() == 1 &&
-                            (((BookModel)table.getModel()).getColumnName(table.getSelectedColumn()).equals("Price") ||
-                            ((BookModel)table.getModel()).getColumnName(table.getSelectedColumn()).equals("Count"))) {
-                SwingUtilities.invokeLater(() -> new BookEditor(table));
+            if(table.getSelectedRow() > -1 && table.getSelectedRowCount() == 1) {
+                SwingUtilities.invokeLater(() -> new BookAdd(table, false));
             }
         }
     }

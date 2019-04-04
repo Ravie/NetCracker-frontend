@@ -1,7 +1,6 @@
 package com.netcracker.educentr.nn.group2.boris;
 
 import javax.swing.table.AbstractTableModel;
-import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,21 +24,13 @@ public class BookModel extends AbstractTableModel {
         return books.contains(b);
     }
 
-    public void editBook(int rowIndex, double price, int qty){
-        Book cur=books.get(rowIndex);
-        cur.setPrice(price);
-        cur.setQty(qty);
+    public void editBook(int rowIndex, Book b){
+        books.set(rowIndex, b);
         fireTableDataChanged();
     }
 
     public void removeBook(int rowIndex){
         books.remove(rowIndex);
-        fireTableDataChanged();
-    }
-
-    public void editAuthor(int rowIndex, Author author){
-        Book cur=books.get(rowIndex);
-        cur.setAuthor(author);
         fireTableDataChanged();
     }
 
