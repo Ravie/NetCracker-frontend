@@ -4,10 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class BookAdd extends JFrame {
+public class BookEditor extends JFrame {
     private final String TITLE_INPUT_ERROR = "Ошибка ввода";
 
-    public BookAdd(JTable table, boolean isAddition) {
+    public BookEditor(JTable table, boolean isAddition) {
         super("Add book to library");
         setSize(640, 360);
         setLocationRelativeTo(null);
@@ -69,7 +69,7 @@ public class BookAdd extends JFrame {
 
         JPanel grid = new JPanel(new GridLayout(1, 2, 5, 0));
         JButton btnOk = new JButton("OK");
-        btnOk.addActionListener(new BookAdd.OkayClick(table, isAddition, columnValue, authorColValue));
+        btnOk.addActionListener(new BookEditor.OkayClick(table, isAddition, columnValue, authorColValue));
         grid.add(btnOk);
         JPanel flow = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         flow.add(grid);
@@ -98,7 +98,7 @@ public class BookAdd extends JFrame {
             try {
                 Long.parseLong(columnValue[0].getText());
             } catch (NumberFormatException nfe) {
-                JOptionPane.showMessageDialog(BookAdd.this,
+                JOptionPane.showMessageDialog(BookEditor.this,
                         new String[]{"ISBN не является числом типа long"},
                         TITLE_INPUT_ERROR,
                         JOptionPane.ERROR_MESSAGE);
@@ -107,7 +107,7 @@ public class BookAdd extends JFrame {
             try {
                 Integer.parseInt(columnValue[3].getText());
             } catch (NumberFormatException nfe) {
-                JOptionPane.showMessageDialog(BookAdd.this,
+                JOptionPane.showMessageDialog(BookEditor.this,
                         new String[]{"Count не является числом типа int"},
                         TITLE_INPUT_ERROR,
                         JOptionPane.ERROR_MESSAGE);
@@ -116,7 +116,7 @@ public class BookAdd extends JFrame {
             try {
                 Double.parseDouble(columnValue[2].getText());
             } catch (NumberFormatException nfe) {
-                JOptionPane.showMessageDialog(BookAdd.this,
+                JOptionPane.showMessageDialog(BookEditor.this,
                         new String[]{"Price не является числом типа double"},
                         TITLE_INPUT_ERROR,
                         JOptionPane.ERROR_MESSAGE);
@@ -125,35 +125,35 @@ public class BookAdd extends JFrame {
             if (!isException) {
                 boolean isError = false;
                 if (Long.parseLong(columnValue[0].getText()) < 0) {
-                    JOptionPane.showMessageDialog(BookAdd.this,
+                    JOptionPane.showMessageDialog(BookEditor.this,
                             new String[]{"Отрицательное значение:", "ISBN = " + Integer.parseInt(columnValue[3].getText())},
                             TITLE_INPUT_ERROR,
                             JOptionPane.ERROR_MESSAGE);
                     isError = true;
                 }
                 if (Integer.parseInt(columnValue[3].getText()) < 0) {
-                    JOptionPane.showMessageDialog(BookAdd.this,
+                    JOptionPane.showMessageDialog(BookEditor.this,
                             new String[]{"Отрицательное значение:", "Count = " + Integer.parseInt(columnValue[3].getText())},
                             TITLE_INPUT_ERROR,
                             JOptionPane.ERROR_MESSAGE);
                     isError = true;
                 }
                 if (Double.parseDouble(columnValue[2].getText()) < 0) {
-                    JOptionPane.showMessageDialog(BookAdd.this,
+                    JOptionPane.showMessageDialog(BookEditor.this,
                             new String[]{"Отрицательное значение:", "Price = " + Double.parseDouble(columnValue[2].getText())},
                             TITLE_INPUT_ERROR,
                             JOptionPane.ERROR_MESSAGE);
                     isError = true;
                 }
                 if (!(authorColValue[1].getText().contains("@") && authorColValue[1].getText().contains("."))) {
-                    JOptionPane.showMessageDialog(BookAdd.this,
+                    JOptionPane.showMessageDialog(BookEditor.this,
                             new String[]{"Данный Email недопустим"},
                             TITLE_INPUT_ERROR,
                             JOptionPane.ERROR_MESSAGE);
                     isError = true;
                 }
                 if (!(authorColValue[2].getText().equalsIgnoreCase("male")) && !(authorColValue[2].getText().equalsIgnoreCase("female")) && !(authorColValue[2].getText().equalsIgnoreCase("f")) && !(authorColValue[2].getText().equalsIgnoreCase("m"))) {
-                    JOptionPane.showMessageDialog(BookAdd.this,
+                    JOptionPane.showMessageDialog(BookEditor.this,
                             new String[]{"Введите верный пол: male/female (m/f)"},
                             TITLE_INPUT_ERROR,
                             JOptionPane.ERROR_MESSAGE);
@@ -170,7 +170,7 @@ public class BookAdd extends JFrame {
                                     authorColValue[2].getText()));
                     if (isAddition) {
                         if (((BookModel) table.getModel()).isBookInLibrary(b)) {
-                            JOptionPane.showMessageDialog(BookAdd.this,
+                            JOptionPane.showMessageDialog(BookEditor.this,
                                     new String[]{"Книга с такими ISBN, именем и автором уже существует в базе!"},
                                     TITLE_INPUT_ERROR,
                                     JOptionPane.ERROR_MESSAGE);
